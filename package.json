@@ -16,7 +16,12 @@
     "url": "https://github.com/FirdavsJurakulov/gns_clinic/issues"
   },
   "homepage": "https://github.com/FirdavsJurakulov/gns_clinic#readme",
-  "dependencies": {
-    "gulp": "^4.0.2"
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-scss-combine": "^1.0.0",
+    "node-sass": "^7.0.1"
   }
 }
