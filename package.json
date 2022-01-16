@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/FirdavsJurakulov/gns_clinic/issues"
   },
-  "homepage": "https://github.com/FirdavsJurakulov/gns_clinic#readme"
+  "homepage": "https://github.com/FirdavsJurakulov/gns_clinic#readme",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
 }
