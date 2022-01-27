@@ -9,6 +9,8 @@
 // VARIABLES
 $default: #000;
 $accent: #7B61FF;
+$accent-gradient: linear-gradient(90deg, #84BCFF -33.77%, #0071F5 140.13%);
+$prph: #7A7A7A;
 
 
 //MIXINS
@@ -16,16 +18,23 @@ $accent: #7B61FF;
     outline: none;
     padding: 15px 15px;
     font-size: 18px;
-    background: $accent;
+    background: $accent-gradient;
     border: none;
     color: #fff;
     cursor: pointer;
+    border-radius: 5px;
+    transition: 0.4s;
+    &:hover{
+        box-shadow: 0px 15px 25px rgba(124, 167, 175, 0.274);
+        transform: translateY(-2px);
+    }
 }
 @mixin btn{
     border: none;
     outline: none;
     cursor: pointer;
 }
+
 a{
     text-decoration: none;
     color: $default;
@@ -33,6 +42,9 @@ a{
 ul{
     list-style: none;
     display: flex;
+}
+p{
+    color:$prph;
 }
 .social-media{
     margin-top: 30px;
@@ -53,7 +65,7 @@ ul{
 }
 nav{
     width: 100%;
-    height: 100px;
+    min-height: 100px;
     padding: 30px 200px;
     position: fixed;
     display: flex;
@@ -61,25 +73,43 @@ nav{
     justify-content: space-between;
     background: #ececec;
     z-index:9999;
-    background: rgba(255,255,255,0.5);
+    background: red/*rgba(255,255,255,0.5)*/;
     backdrop-filter: blur(200px);
-    .navbar-brand{
-        font-size: 24px;
-        font-weight: 600;
-        color:$default;
-    }
-    .navbar-links{
-        .navbar-item{
-            margin: 0px 20px;
-            font-size: 18px;
-            font-weight: 500;
-            a{
-                color: $default;
-            }
+    .nav-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .navbar-brand{
+            font-size: 24px;
+            font-weight: 600;
+            color:$default;
+        }
+        #nav-mobile{
+            @include cta-btn;
+            width: 40px;
+            height: 40px;
+            margin: 15px;
+            display: none;
         }
     }
-    .navbar-cta{
-        @include cta-btn;
+    #navbar-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .navbar-links{
+            .navbar-item{
+                margin: 0px 20px;
+                font-size: 18px;
+                font-weight: 500;
+                a{
+                    color: $default;
+                }
+            }
+        }
+        .navbar-cta{
+            @include cta-btn;
+        }
     }
 }
 .container{
@@ -90,16 +120,16 @@ nav{
 #hero-section{
     width: 100%;
     min-height: 100vh;
-    padding: 140px;
+    padding-top: 140px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     .hero-banner{
-        width: 1040px;
+        width: 100%;
         height: 640px;
-        background: #c4c4c4;
+        background: #dbdbdb;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -109,6 +139,8 @@ nav{
             margin-bottom: 10px;
         }
         p{
+            inline-size: 400px;
+            overflow-wrap: break-word;
             font-size: 24px;
             width: 800px;
             margin-bottom: 50px;
@@ -128,53 +160,21 @@ nav{
         margin-bottom: 70px;
     }
     .services-box{
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        
         .service{
-            height: 200px;
-            background: #c4c4c4;
-            padding: 15px;
-            text-align: center;
-            h4{
-                font-size: 24px;
-                font-weight: 500;
-                margin-bottom: 20px;
+            width:700px;            
+            display: flex;
+            margin: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 15px 25px rgba(124, 167, 175, 0.274);
+            img{
+                width: inherit;
             }
-            p{
-                margin-bottom: 15px;
-            }
-            .expand{
-                @include btn;
-                width: 40px;
-                height: 40px;
-                font-size: 36px;
-                line-height: 40px;
-            }
-        }
-    }
-}
-#partners-section{
-    width: 100%;
-    height: 300px;
-    background: #c4c4c4;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h3{
-        text-align: center;
-        font-size: 36px;
-        font-weight: 600;
-    }
-    .partners-list{
-        .partner{
-            width: 160px;
-            height: 160px;
-            background: #999;
-            margin: 20px;
         }
     }
 }
@@ -195,6 +195,7 @@ nav{
         margin-bottom: 50px;
     }
     p{
+        text-align: justify;
         font-size: 24px;
         margin-bottom: 30px;
     }
@@ -207,6 +208,7 @@ nav{
     grid-column-gap:80px;
     padding-top: 80px;
     .map-location{
+        width: 600px;
         height: 480px;
         background: #c4c4c4;
         display: flex;
@@ -243,4 +245,120 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+
+
+
+
+
+//MEDIA SCREEN
+
+// NAVBAR
+@media screen and (max-width:1190px){
+    nav{
+        min-height: 100px;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        .nav-title{
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            #nav-mobile{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        #navbar-content{
+            width: 100%;
+            display: none;
+            .navbar-links{
+                background: red;
+                flex-direction: column;
+            }
+        }
+    }
+    .container{
+        padding: 0px 100px;
+    }
+    #hero-section{
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+        .hero-banner{
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h2{
+                font-size: 36px;
+            }
+            p{
+                inline-size: 400px;
+                text-align: center;
+                font-size: 18px;
+            }
+        }
+    }
+    #contacts-section{
+
+    }
+}
+
+@media screen and (max-width:1190px){
+    #navbar-content.off{
+        display: none;
+    }
+    #navbar-content.on{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width:1839px){
+    #service-section{
+        .services-box{
+            .service{
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width:1600px){
+    #contacts-section{
+        grid-template-columns: auto;
+    }
+}
+@media screen and (max-width:500px)
+{
+    nav{
+        .nav-title{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-links{
+            width: 100%;
+            flex-direction: column;
+        }
+        .navbar-cta{
+            width: 100%;
+            margin: 15px 0px;
+        }
+    }
+}
+@media screen and (max-width:500px){
+    #navbar-content.off{
+        display: none;
+    }
+    #navbar-content.on{
+        flex-direction: column;
+        display: flex;
+    }
 }

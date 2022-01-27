@@ -10,22 +10,29 @@
 </head>
 <body>
 <nav>
-    <a href="#" class="navbar-brand">+GNS</a>
-    <ul class="navbar-links">
-        <li class="navbar-item">
-            <a href="#">Home</a>
-        </li>
-        <li class="navbar-item">
-            <a href="#">Services</a>
-        </li>
-        <li class="navbar-item">
-            <a href="#">Why us?</a>
-        </li>
-        <li class="navbar-item">
-            <a href="#">Contacts</a>
-        </li>
-    </ul>
-    <button class="navbar-cta">Phone Number here</button>
+    <div class="nav-title">
+        <a href="#" class="navbar-brand">+GNS</a>
+        <button id="nav-mobile" class="off" onclick="myFunction()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div id="navbar-content">
+        <ul class="navbar-links">
+            <li class="navbar-item">
+                <a href="#">Home</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#">Services</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#">Why us?</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#">Contacts</a>
+            </li>
+        </ul>
+        <button class="navbar-cta">Phone Number here</button>
+    </div>
 </nav>
 <div class="container">
     <section id="hero-section">
@@ -52,66 +59,14 @@
         <h3>Our Services</h3>
         <div class="services-box">
             <div class="service">
-                <h4>Service name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio veniam suscipit explicabo minima repellendus.</p>
-                <button class="expand">+</button>
+                <img src="img/photo_2022-01-22_13-52-31.jpg" alt="">
             </div>
             <div class="service">
-                <h4>Service name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio veniam suscipit explicabo minima repellendus.</p>
-                <button class="expand">+</button>
-            </div>
-            <div class="service">
-                <h4>Service name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio veniam suscipit explicabo minima repellendus.</p>
-                <button class="expand">+</button>
-            </div>
-            <div class="service">
-                <h4>Service name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio veniam suscipit explicabo minima repellendus.</p>
-                <button class="expand">+</button>
-            </div>
-            <div class="service">
-                <h4>Service name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio veniam suscipit explicabo minima repellendus.</p>
-                <button class="expand">+</button>
-            </div>
-            <div class="service">
-                <h4>Service name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio veniam suscipit explicabo minima repellendus.</p>
-                <button class="expand">+</button>
-            </div>
-            <div class="service">
-                <h4>Service name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio veniam suscipit explicabo minima repellendus.</p>
-                <button class="expand">+</button>
-            </div>
-            <div class="service">
-                <h4>Service name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio veniam suscipit explicabo minima repellendus.</p>
-                <button class="expand">+</button>
-            </div>
-            <div class="service">
-                <h4>Service name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio veniam suscipit explicabo minima repellendus.</p>
-                <button class="expand">+</button>
+                <img src="img/photo_2022-01-22_13-52-37.jpg" alt="">
             </div>
         </div>
     </section>
-</div>
-<section id="partners-section">
-    <h3>Our Partners</h3>
-    <ul class="partners-list">
-        <li class="partner"></li>
-        <li class="partner"></li>
-        <li class="partner"></li>
-        <li class="partner"></li>
-        <li class="partner"></li>
-        <li class="partner"></li>
-    </ul>
-</section>
-<div class="container">
-    <div id="about-section">
+    <section id="about-section">
         <h3>About us</h3>
         <div class="about-img"></div>
         <p>
@@ -123,7 +78,7 @@
         <p>
             Cras elementum viverra tortor sit amet ultrices. Aenean ex ligula, scelerisque et erat non, lobortis feugiat ligula. Vivamus vel efficitur nibh. Sed congue pharetra dui nec mollis. Quisque facilisis nulla nec suscipit bibendum. Integer efficitur est at magna sagittis tempus. Quisque et ornare felis, non ornare urna. Ut laoreet metus id felis sagittis volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In at libero mi. Cras vulputate purus ac sodales tempor.
         </p>
-    </div>
+    </section>
     <section id="contacts-section">
         <div class="map-location">
             <p>Location</p>
@@ -157,5 +112,15 @@
 <footer>
     <p>GNS Clinic © 2022.</p>
 </footer>
+<script>
+    function myFunction() {
+        var x = document.getElementById("navbar-content");
+        if (x.className === "off") {
+            x.className = "on";
+        } else {
+            x.className = "off";
+        }
+    }
+</script>
 </body>
 </html>
